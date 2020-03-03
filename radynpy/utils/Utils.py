@@ -682,3 +682,53 @@ def molfys(tg,*args):
     deh2=deh2*ee
 
     return xkh2,dxkh2,eh2,deh2
+
+
+# Graham Kerr
+# NASA/GSFC
+# 1st July 2019
+# 
+# NAME:               closest_ind.py
+#
+# PURPOSE:            To find the index in an array X such that X(ind) is
+#                     closest to y
+#
+# INPUTS:             x -- an array 
+#                     y -- the value in x to find
+#
+# OPTIONAL
+# INPUTS:             
+#                    
+#
+# OUTPUTS:            ind -- the index such that X(ind) is closest to y
+#                     diff -- the difference between X(ind) and y
+#
+#
+# NOTES:              
+#
+def closest_ind(x, y=[], *args):
+    '''
+    Finds the index in an array X such that X(ind) is
+    closest to y. Returns the index and the difference
+
+    Parameters
+    __________
+    
+    x :
+          an array 
+    y :
+          the value(s) within x to find
+   
+    Graham Kerr, March 2nd 2020
+
+    '''
+    numvals = len(y)
+    
+    inds = np.zeros([numvals],dtype=int)
+
+    for i in range(numvals):
+        inds[i] = (np.abs(x - y[i])).argmin()
+
+    diffs = x[inds] - y
+
+    return inds, diffs

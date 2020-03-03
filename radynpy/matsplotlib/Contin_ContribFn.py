@@ -785,7 +785,7 @@ def contin_contrib_fn(cdf, isteps= [0], wavels_ang = [6690.00], mu_ind = -1,
 
 
 
-    tau_ci = tauq / mu
+    tau_ci = tauq 
     srcfunc = j_tot/xx 
     for i in range(num_waves):
         srcfunc[i,:,:] = srcfunc[i,:,:] * wavels_ang[i]**2 / cc_ang
@@ -802,20 +802,6 @@ def contin_contrib_fn(cdf, isteps= [0], wavels_ang = [6690.00], mu_ind = -1,
     
     cont_cool = j_tot - jlam * alpha_tot
    
-
-
-    #******** ----- to be added later, comparing output intensity
-    # to integral of C fn
-
-    # Compute the continuum intensity for the full run
-    #contflux, cont_lambda, cont_flux, cont_int, /non_zero
-    #cont_int_ex = cont_int[wavel_ind, mu_ind, istep]
-
-    #Compute the ratio
-    #integ_ci = np.sum(dzt_ci*ci,axis=1) 
-
-    #intvscont = cont_int_ex/integ_ci
-
 
     if basic_out == True: 
         print('>>> Basic output only')
