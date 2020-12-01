@@ -168,7 +168,9 @@ def contrib_fn_vars(cdf, kr, tStep=0, yRange=[-0.08, 2.5], vRange=[300.0, -300.0
                    'wavelength':wavelength,
                    'lineProfile':lineProfile,
                    'iwy':iwy,
-                   'iwx':iwx
+                   'iwx':iwx,
+                   'tStep':tStep,
+                   'time':cdf.time[tStep]
                   }
         return out
 
